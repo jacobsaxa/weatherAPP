@@ -1,8 +1,9 @@
+
 export const GEO_URL = 'https://wft-geo-db.p.rapidapi.com/v1/geo/cities';
 export const GEO_OPTIONS = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': '272e7149d1msh753d7580f21e68ep173ab6jsn0c0cf1e0c37a',
+		'x-rapidapi-key': process.env.REACT_APP_GEO_KEY,
 		'x-rapidapi-host': 'wft-geo-db.p.rapidapi.com'
 	}
 };
