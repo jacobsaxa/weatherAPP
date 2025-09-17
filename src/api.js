@@ -7,10 +7,6 @@ export const GEO_OPTIONS = {
 	}
 };
 
-try {
-	const response = await fetch(GEO_URL, GEO_OPTIONS);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
+export const WEATHER_API_KEY=process.env.REACT_APP_WEATHER_KEY
+
+export const WEATHER_API_URL="https://api.openweathermap.org/data/2.5"
