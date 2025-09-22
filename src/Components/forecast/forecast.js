@@ -1,3 +1,4 @@
+import './forecast.css';
 import {
     Accordion,
     AccordionItem,
@@ -24,11 +25,26 @@ const Forecast = ({ data }) => {
                                     <img alt="weather" className="icon-small" src={`icons/${item.weather[0].icon}.png`} />
                                     <label className="day">{forecastDays[index]}</label>
                                     <label className="description">{item.weather[0].description}</label>
-                                    <label className="min-max">High: {Math.round(item.main.temp)}°F</label>
+                                    <label className="high">High: {Math.round(item.main.temp)}°F</label>
                                 </div>
                             </AccordionItemButton>
                         </AccordionItemHeading>
-                        <AccordionItemPanel></AccordionItemPanel>
+                        <AccordionItemPanel>
+                            <div className="daily-details-grid">
+                                <div className="daily-details-grid-item">
+                                    <label>Feels Like: </label>
+                                    <label className="grid-item-data">{item.main.feels_like}°F</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Humidity: </label>
+                                    <label className="grid-item-data">{item.main.humidity}%</label>
+                                </div>
+                                <div className="daily-details-grid-item">
+                                    <label>Wind: </label>
+                                    <label className="grid-item-data">{item.wind.speed} m/h</label>
+                                </div>
+                            </div>
+                        </AccordionItemPanel>
                     </AccordionItem>
                 ))}
             </Accordion>
